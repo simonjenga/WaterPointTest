@@ -76,12 +76,11 @@ public class Application implements CommandLineRunner {
             requestHeaders.setAccept(Collections.singletonList(mediaType));
             HttpEntity<?> requestEntity = new HttpEntity<Object>(requestHeaders);
 
-            // Make the HTTP GET request, marshaling the response from JSON to an array of WaterPoint
+            // Make the HTTP GET request, marshalling the response from JSON to an array of WaterPoint
             ResponseEntity<WaterPoint[]> responseEntity = restTemplate.exchange(URL, HttpMethod.GET, requestEntity, WaterPoint[].class);
             WaterPoint[] waterPoints = responseEntity.getBody();
 
-            List<WaterPoint> wPoints = Arrays.asList(waterPoints);
-            this.processWaterPoint(wPoints);
+            this.processWaterPoint(Arrays.asList(waterPoints));
         } else {
             LOG.info("No Internet connection, Please provide a connection!");
             throw new IllegalStateException("No Internet connection found, Please provide a connection!");
@@ -91,9 +90,8 @@ public class Application implements CommandLineRunner {
     /**
      * Process the list of JSON data in form of a {@link WaterPoint} object.
      * 
-     * @param cities the list of {@link WaterPoint} to use
-     * @throws IOException If there is a problem
-     * @throws IOException, JSONException 
+     * @param wPoints the list of {@link WaterPoint} to use
+     * @throws IOException, JSONException If there is a problem
      */
     private void processWaterPoint(List<WaterPoint> wPoints) throws IOException, JSONException {
         if (wPoints.isEmpty()) {
@@ -160,12 +158,16 @@ public class Application implements CommandLineRunner {
     }
 
     /**
-     * Java method to sort Map in Java by value e.g. HashMap or Hashtable
-     * throw NullPointerException if Map contains null values
-     * It also sort values even if they are duplicates
+     * Java method to sort a {@link Map} e.g. {@link HashMap} or {@link Hashtable} in by values 
+     * It will also sort values even if they are duplicates.
+	 *
+     * @param map the map to sort
+	 *
+     * @throws {@link NullPointerException} if the {@link Map} contains {@code null} values.
+	 * @return The sorted {@link Map} in by values
      */
     @SuppressWarnings("unchecked")
-	private <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(Map<K,V> map){
+    private <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(Map<K,V> map) {
         final List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
 
         final Comparator<Map.Entry<K,V>> COMPARE_PERCENTAGE = new Comparator<Map.Entry<K,V>>() {
@@ -177,8 +179,7 @@ public class Application implements CommandLineRunner {
     	
         Collections.sort(entries, COMPARE_PERCENTAGE);
   
-        //LinkedHashMap will keep the keys in the order they are inserted
-        //which is currently sorted on natural ordering
+        // LinkedHashMap will keep keys in the order they are inserted as it is currently sorted on natural ordering
         Map<K,V> sortedMap = new LinkedHashMap<K,V>();
   
         for(Map.Entry<K,V> entry: entries){
