@@ -160,11 +160,11 @@ public class Application implements CommandLineRunner {
     /**
      * Java method to sort a {@link Map} e.g. {@link HashMap} or {@link Hashtable} in by values 
      * It will also sort values even if they are duplicates.
-	 *
+     *
      * @param map the map to sort
-	 *
+     *
      * @throws {@link NullPointerException} if the {@link Map} contains {@code null} values.
-	 * @return The sorted {@link Map} in by values
+     * @return The sorted {@link Map} in by values
      */
     @SuppressWarnings("unchecked")
     private <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(Map<K,V> map) {
