@@ -76,7 +76,7 @@ public class Application implements CommandLineRunner {
             requestHeaders.setAccept(Collections.singletonList(mediaType));
             HttpEntity<?> requestEntity = new HttpEntity<Object>(requestHeaders);
 
-            // Make the HTTP GET request, marshaling the response from JSON to an array of Events
+            // Make the HTTP GET request, marshaling the response from JSON to an array of WaterPoint
             ResponseEntity<WaterPoint[]> responseEntity = restTemplate.exchange(URL, HttpMethod.GET, requestEntity, WaterPoint[].class);
             WaterPoint[] waterPoints = responseEntity.getBody();
 
