@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * This is a Domain class that will contain the data representation for the City object
+ * This is a Domain class that will contain the data representation for the WaterPoint object
  * 
  * @author Simon Njenga
  * @since 0.1
