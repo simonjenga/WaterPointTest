@@ -101,14 +101,14 @@ public class Application implements CommandLineRunner {
 
             Set<String> villageNames = new HashSet<String>();
             
-            Multimap<String, String> countsYes = ArrayListMultimap.create();
-            Multimap<String, String> countsNo = ArrayListMultimap.create();
+            Multimap<String, String> waterFunctioningYes = ArrayListMultimap.create();
+            Multimap<String, String> waterFunctioningNo = ArrayListMultimap.create();
             
             Map<String, Integer> percentageMap = new HashMap<String, Integer>();
 
-            OrderedJSONObject orderedObject = new OrderedJSONObject();
-            OrderedJSONObject orderedPercentage = new OrderedJSONObject();
-            OrderedJSONObject waterCount = new OrderedJSONObject();
+            OrderedJSONObject waterPointJson = new OrderedJSONObject();
+            OrderedJSONObject villageCountJson = new OrderedJSONObject();
+            OrderedJSONObject percentageJson = new OrderedJSONObject();
 
             DecimalFormat decimalFormat = new DecimalFormat("####0");
 
@@ -119,40 +119,43 @@ public class Application implements CommandLineRunner {
                 String isWaterFunctioning = wPoints.get(i).isWater_functioning();
 
                 if (isWaterFunctioning.equals("yes")) {
-                    countsYes.put(wPoints.get(i).getCommunities_villages().toString(), "yes");
+                    waterFunctioningYes.put(wPoints.get(i).getCommunities_villages().toString(), "yes");
                     functioningYes++;
                 } else if (isWaterFunctioning.equals("no")) {
-                    countsNo.put(wPoints.get(i).getCommunities_villages().toString(), "no");
+                    waterFunctioningNo.put(wPoints.get(i).getCommunities_villages().toString(), "no");
                     functioningNo++;
                 }
             }
 
-            orderedObject.put("number_functional:", decimalFormat.format(functioningYes));
+            waterPointJson.put("number_functional:", decimalFormat.format(functioningYes));
 
-            Iterator<String> villageName = villageNames.iterator();
+            Iterator<String> villageNameItr = villageNames.iterator();
 
-            for(int i = 0; i < villageNames.size(); i++) {
-                String name = villageName.next();
-                Collection<String> countYes = countsYes.get(name);
-                Collection<String> countNO = countsNo.get(name);
+            for (; villageNameItr.hasNext();) {
+                String villageName = villageNameItr.next();
+                Collection<String> villagesYes = waterFunctioningYes.get(villageName);
+                Collection<String> villagesNO = waterFunctioningNo.get(villageName);
 
-                waterCount.put(name, countYes.size());
-                percentageMap.put(name, Integer.valueOf(decimalFormat.format((countNO.size() / functioningNo) * 100)));
+                // get the number of functional water points in each village
+                villageCountJson.put(villageName, villagesYes.size());
+                
+                // calculate the percentage of non-functional water points in each village
+                percentageMap.put(villageName, Integer.valueOf(decimalFormat.format((villagesNO.size() / functioningNo) * 100)));
             }
 
-            orderedObject.put("number_water_points:", waterCount);
+            waterPointJson.put("number_water_points:", villageCountJson);
 
-            Iterator<String> iterator = this.sortByValues(percentageMap).keySet().iterator();
+            Iterator<String> percentageMapItr = this.sortByValues(percentageMap).keySet().iterator();
 
-            while (iterator.hasNext()) {
-                String key = iterator.next();
+            while (percentageMapItr.hasNext()) {
+                String key = percentageMapItr.next();
                 Integer value = percentageMap.get(key);
-                orderedPercentage.put(key, value + "%");
+                percentageJson.put(key, value.toString().concat("%"));
             }
 
-            orderedObject.put("community_ranking:", orderedPercentage);
+            waterPointJson.put("community_ranking:", percentageJson);
 
-            LOG.info(orderedObject.toString());
+            LOG.info(waterPointJson.toString());
             LOG.info("matching results found and processed for the water point!");
         }
     }
