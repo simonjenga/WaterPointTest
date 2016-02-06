@@ -161,20 +161,20 @@ public class Application implements CommandLineRunner {
     }
 
     /**
-     * Java method to sort a {@link Map} e.g. {@link HashMap} or {@link Hashtable} in by values 
+     * Java method to sort a {@link Map} e.g. {@link HashMap} or {@link Hashtable} by values 
      * It will also sort values even if they are duplicates.
      *
      * @param map the map to sort
      *
      * @throws {@link NullPointerException} if the {@link Map} contains {@code null} values.
-     * @return The sorted {@link Map} in by values
+     * @return The sorted {@link Map} by values
      */
     @SuppressWarnings("unchecked")
     private <K extends Comparable,V extends Comparable> Map<K,V> sortByValues(Map<K,V> map) {
         final List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
 
         final Comparator<Map.Entry<K,V>> COMPARE_PERCENTAGE = new Comparator<Map.Entry<K,V>>() {
-        	@Override
+            @Override
             public int compare(Entry<K, V> o1, Entry<K, V> o2) {
                 return o2.getValue().compareTo(o1.getValue());
             }
@@ -185,7 +185,7 @@ public class Application implements CommandLineRunner {
         // LinkedHashMap will keep keys in the order they are inserted as it is currently sorted on natural ordering
         Map<K,V> sortedMap = new LinkedHashMap<K,V>();
   
-        for(Map.Entry<K,V> entry: entries){
+        for(Map.Entry<K,V> entry: entries) {
             sortedMap.put(entry.getKey(), entry.getValue());
         }  
         return sortedMap;
