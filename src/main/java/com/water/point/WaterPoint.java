@@ -12,48 +12,89 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WaterPoint {
 
-	private String water_pay;
-	private String respondent;
-	private String research_asst_name;
-	private String water_used_season;
-	private String _xform_id_string;
-	private String _bamboo_dataset_id;
-	private String _deleted_at;
-	private String water_point_condition;
-	private String water_mechanism_plate;
-	private String other_point_1km;
-	@JsonIgnore
-	private String _attachments;
-	private String water_lift_mechanism_type;
-	private String water_point_image;
-	private String end;
-	private String animal_number;
-	private String water_point_id;
-	private String start;
-	private String water_connected;
-	private String water_manager_name;
-	private String _status;
-	private Long enum_id_1;
-	private String water_lift_mechanism;
+    private String water_pay;
+
+    private String respondent;
+
+    private String research_asst_name;
+
+    private String water_used_season;
+
+    private String _xform_id_string;
+
+    private String _bamboo_dataset_id;
+
+    private String _deleted_at;
+
+    private String water_point_condition;
+
+    private String water_mechanism_plate;
+
+    private String other_point_1km;
+
+    @JsonIgnore
+    private String _attachments;
+
+    private String water_lift_mechanism_type;
+
+    private String water_point_image;
+
+    private String end;
+
+    private String animal_number;
+
+    private String water_point_id;
+
+    private String start;
+
+    private String water_connected;
+
+    private String water_manager_name;
+
+    private String _status;
+
+    private Long enum_id_1;
+
+    private String water_lift_mechanism;
+
     private String districts_divisions;
+
     private String _uuid;
+
     private String road_type;
+
     private String grid;
+
     private String date;
+
     private String communities_villages;
+
     private String formhub_uuid;
+
     private String road_available;
+
     private String water_functioning;
+
     private String _submission_time;
+
     private String signal;
+
     private String water_source_type;
+
     private GeoPosition geo_position;
+
     private String water_point_geocode;
+
     private String deviceid;
+
     private String locations_wards;
+
     private String water_manager;
-    private String water_developer;    
+
+    private String water_developer;
+
     private Long _id;
+
     private String animal_point;
 
     /**
