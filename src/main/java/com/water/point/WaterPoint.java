@@ -37,6 +37,7 @@ public class WaterPoint {
 
     private String water_lift_mechanism_type;
 
+    @JsonIgnore
     private String water_point_image;
 
     private String end;
