@@ -194,152 +194,152 @@ public class WaterPoint {
         return _deleted_at;
     }
 
-/**
-* @param deletedAt the _deleted_at to set
-*/
-public void set_deleted_at(String deletedAt) {
-_deleted_at = deletedAt;
-}
+    /**
+     * @param deletedAt the _deleted_at to set
+     */
+    public void set_deleted_at(String deletedAt) {
+        _deleted_at = deletedAt;
+    }
 
-/**
-* @return the water_point_condition
-*/
-public String getWater_point_condition() {
-return water_point_condition;
-}
+    /**
+     * @return the water_point_condition
+     */
+    public String getWater_point_condition() {
+        return water_point_condition;
+    }
 
-/**
-* @param waterPointCondition the water_point_condition to set
-*/
-public void setWater_point_condition(String waterPointCondition) {
-water_point_condition = waterPointCondition;
-}
+    /**
+     * @param waterPointCondition the water_point_condition to set
+     */
+    public void setWater_point_condition(String waterPointCondition) {
+        water_point_condition = waterPointCondition;
+    }
 
-/**
-* @return the water_mechanism_plate
-*/
-public String isWater_mechanism_plate() {
-return water_mechanism_plate;
-}
+    /**
+     * @return the water_mechanism_plate
+     */
+    public String isWater_mechanism_plate() {
+        return water_mechanism_plate;
+    }
 
-/**
-* @param waterMechanismPlate the water_mechanism_plate to set
-*/
-public void setWater_mechanism_plate(String waterMechanismPlate) {
-water_mechanism_plate = waterMechanismPlate;
-}
+    /**
+     * @param waterMechanismPlate the water_mechanism_plate to set
+     */
+    public void setWater_mechanism_plate(String waterMechanismPlate) {
+        water_mechanism_plate = waterMechanismPlate;
+    }
 
-/**
-* @return the other_point_1km
-*/
-public String isOther_point_1km() {
-return other_point_1km;
-}
+    /**
+     * @return the other_point_1km
+     */
+    public String isOther_point_1km() {
+        return other_point_1km;
+    }
 
-/**
-* @param otherPoint_1km the other_point_1km to set
-*/
-public void setOther_point_1km(String otherPoint_1km) {
-other_point_1km = otherPoint_1km;
-}
+    /**
+     * @param otherPoint_1km the other_point_1km to set
+     */
+    public void setOther_point_1km(String otherPoint_1km) {
+        other_point_1km = otherPoint_1km;
+    }
 
-/**
-* @return the _attachments
-*/
-public String get_attachments() {
-return _attachments;
-}
+    /**
+     * @return the _attachments
+     */
+    public String get_attachments() {
+        return _attachments;
+    }
 
-/**
-* @param attachments the _attachments to set
-*/
-public void set_attachments(String attachments) {
-_attachments = attachments;
-}
+    /**
+     * @param attachments the _attachments to set
+     */
+    public void set_attachments(String attachments) {
+        _attachments = attachments;
+    }
 
-/**
-* @return the water_lift_mechanism_type
-*/
-public String getWater_lift_mechanism_type() {
-return water_lift_mechanism_type;
-}
+    /**
+     * @return the water_lift_mechanism_type
+     */
+    public String getWater_lift_mechanism_type() {
+        return water_lift_mechanism_type;
+    }
 
-/**
-* @param waterLiftMechanismType the water_lift_mechanism_type to set
-*/
-public void setWater_lift_mechanism_type(String waterLiftMechanismType) {
-water_lift_mechanism_type = waterLiftMechanismType;
-}
+    /**
+     * @param waterLiftMechanismType the water_lift_mechanism_type to set
+     */
+    public void setWater_lift_mechanism_type(String waterLiftMechanismType) {
+        water_lift_mechanism_type = waterLiftMechanismType;
+    }
 
-/**
-* @return the water_point_image
-*/
-public String getWater_point_image() {
-return water_point_image;
-}
+    /**
+     * @return the water_point_image
+     */
+    public String getWater_point_image() {
+        return water_point_image;
+    }
 
-/**
-* @param waterPointImage the water_point_image to set
-*/
-public void setWater_point_image(String waterPointImage) {
-water_point_image = waterPointImage;
-}
+    /**
+     * @param waterPointImage the water_point_image to set
+     */
+    public void setWater_point_image(String waterPointImage) {
+        water_point_image = waterPointImage;
+    }
 
-/**
-* @return the end
-*/
-public String getEnd() {
-return end;
-}
+    /**
+     * @return the end
+     */
+    public String getEnd() {
+        return end;
+    }
 
-/**
-* @param end the end to set
-*/
-public void setEnd(String end) {
-this.end = end;
-}
+    /**
+     * @param end the end to set
+     */
+    public void setEnd(String end) {
+        this.end = end;
+    }
 
-/**
-* @return the animal_number
-*/
-public String getAnimal_number() {
-return animal_number;
-}
+    /**
+     * @return the animal_number
+     */
+    public String getAnimal_number() {
+        return animal_number;
+    }
 
-/**
-* @param animalNumber the animal_number to set
-*/
-public void setAnimal_number(String animalNumber) {
-animal_number = animalNumber;
-}
+    /**
+     * @param animalNumber the animal_number to set
+     */
+    public void setAnimal_number(String animalNumber) {
+        animal_number = animalNumber;
+    }
 
-/**
-* @return the water_point_id
-*/
-public String getWater_point_id() {
-return water_point_id;
-}
+    /**
+     * @return the water_point_id
+     */
+    public String getWater_point_id() {
+        return water_point_id;
+    }
 
-/**
-* @param waterPointId the water_point_id to set
-*/
-public void setWater_point_id(String waterPointId) {
-water_point_id = waterPointId;
-}
+    /**
+     * @param waterPointId the water_point_id to set
+     */
+    public void setWater_point_id(String waterPointId) {
+        water_point_id = waterPointId;
+    }
 
-/**
-* @return the start
-*/
-public String getStart() {
-return start;
-}
+    /**
+     * @return the start
+     */
+    public String getStart() {
+        return start;
+    }
 
-/**
-* @param start the start to set
-*/
-public void setStart(String start) {
-this.start = start;
-}
+    /**
+     * @param start the start to set
+     */
+    public void setStart(String start) {
+        this.start = start;
+    }
 
 /**
 * @return the water_connected
