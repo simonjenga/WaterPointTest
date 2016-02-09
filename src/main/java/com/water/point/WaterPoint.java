@@ -509,103 +509,103 @@ public class WaterPoint {
         formhub_uuid = formhubUuid;
     }
 
-/**
-* @return the road_available
-*/
-public String isRoad_available() {
-return road_available;
-}
+    /**
+     * @return the road_available
+     */
+    public String isRoad_available() {
+        return road_available;
+    }
 
-/**
-* @param roadAvailable the road_available to set
-*/
-public void setRoad_available(String roadAvailable) {
-road_available = roadAvailable;
-}
+    /**
+     * @param roadAvailable the road_available to set
+     */
+    public void setRoad_available(String roadAvailable) {
+        road_available = roadAvailable;
+    }
 
-/**
-* @return the water_functioning
-*/
-public String isWater_functioning() {
-return water_functioning;
-}
+    /**
+     * @return the water_functioning
+     */
+    public String isWater_functioning() {
+        return water_functioning;
+    }
 
-/**
-* @param waterFunctioning the water_functioning to set
-*/
-public void setWater_functioning(String waterFunctioning) {
-water_functioning = waterFunctioning;
-}
+    /**
+     * @param waterFunctioning the water_functioning to set
+     */
+    public void setWater_functioning(String waterFunctioning) {
+        water_functioning = waterFunctioning;
+    }
 
-/**
-* @return the _submission_time
-*/
-public String get_submission_time() {
-return _submission_time;
-}
+    /**
+     * @return the _submission_time
+     */
+    public String get_submission_time() {
+        return _submission_time;
+    }
 
-/**
-* @param submissionTime the _submission_time to set
-*/
-public void set_submission_time(String submissionTime) {
-_submission_time = submissionTime;
-}
+    /**
+     * @param submissionTime the _submission_time to set
+     */
+    public void set_submission_time(String submissionTime) {
+        _submission_time = submissionTime;
+    }
 
-/**
-* @return the signal
-*/
-public String getSignal() {
-return signal;
-}
+    /**
+     * @return the signal
+     */
+    public String getSignal() {
+        return signal;
+    }
 
-/**
-* @param signal the signal to set
-*/
-public void setSignal(String signal) {
-this.signal = signal;
-}
+    /**
+     * @param signal the signal to set
+     */
+    public void setSignal(String signal) {
+        this.signal = signal;
+    }
 
-/**
-* @return the water_source_type
-*/
-public String getWater_source_type() {
-return water_source_type;
-}
+    /**
+     * @return the water_source_type
+     */
+    public String getWater_source_type() {
+        return water_source_type;
+    }
 
-/**
-* @param waterSourceType the water_source_type to set
-*/
-public void setWater_source_type(String waterSourceType) {
-water_source_type = waterSourceType;
-}
+    /**
+     * @param waterSourceType the water_source_type to set
+     */
+    public void setWater_source_type(String waterSourceType) {
+        water_source_type = waterSourceType;
+    }
 
-/**
-* @return the geo_position
-*/
-public GeoPosition getGeo_position() {
-return geo_position;
-}
+    /**
+     * @return the geo_position
+     */
+    public GeoPosition getGeo_position() {
+        return geo_position;
+    }
 
-/**
-* @param geoPosition the geo_position to set
-*/
-public void setGeo_position(GeoPosition geoPosition) {
-geo_position = geoPosition;
-}
+    /**
+     * @param geoPosition the geo_position to set
+     */
+    public void setGeo_position(GeoPosition geoPosition) {
+        geo_position = geoPosition;
+    }
 
-/**
-* @return the water_point_geocode
-*/
-public String getWater_point_geocode() {
-return water_point_geocode;
-}
+    /**
+     * @return the water_point_geocode
+     */
+    public String getWater_point_geocode() {
+        return water_point_geocode;
+    }
 
-/**
-* @param waterPointGeocode the water_point_geocode to set
-*/
-public void setWater_point_geocode(String waterPointGeocode) {
-water_point_geocode = waterPointGeocode;
-}
+    /**
+     * @param waterPointGeocode the water_point_geocode to set
+     */
+    public void setWater_point_geocode(String waterPointGeocode) {
+        water_point_geocode = waterPointGeocode;
+    }
 
 /**
 * @return the deviceid
