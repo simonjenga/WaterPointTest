@@ -607,87 +607,87 @@ public class WaterPoint {
         water_point_geocode = waterPointGeocode;
     }
 
-/**
-* @return the deviceid
-*/
-public String getDeviceid() {
-return deviceid;
-}
+    /**
+     * @return the deviceid
+     */
+    public String getDeviceid() {
+        return deviceid;
+    }
 
-/**
-* @param deviceid the deviceid to set
-*/
-public void setDeviceid(String deviceid) {
-this.deviceid = deviceid;
-}
+    /**
+     * @param deviceid the deviceid to set
+     */
+    public void setDeviceid(String deviceid) {
+        this.deviceid = deviceid;
+    }
 
-/**
-* @return the locations_wards
-*/
-public String getLocations_wards() {
-return locations_wards;
-}
+    /**
+     * @return the locations_wards
+     */
+    public String getLocations_wards() {
+        return locations_wards;
+    }
 
-/**
-* @param locationsWards the locations_wards to set
-*/
-public void setLocations_wards(String locationsWards) {
-locations_wards = locationsWards;
-}
+    /**
+     * @param locationsWards the locations_wards to set
+     */
+    public void setLocations_wards(String locationsWards) {
+        locations_wards = locationsWards;
+    }
 
-/**
-* @return the water_manager
-*/
-public String getWater_manager() {
-return water_manager;
-}
+    /**
+     * @return the water_manager
+     */
+    public String getWater_manager() {
+        return water_manager;
+    }
 
-/**
-* @param waterManager the water_manager to set
-*/
-public void setWater_manager(String waterManager) {
-water_manager = waterManager;
-}
+    /**
+     * @param waterManager the water_manager to set
+     */
+    public void setWater_manager(String waterManager) {
+        water_manager = waterManager;
+    }
 
-/**
-* @return the water_developer
-*/
-public String getWater_developer() {
-return water_developer;
-}
+    /**
+     * @return the water_developer
+     */
+    public String getWater_developer() {
+        return water_developer;
+    }
 
-/**
-* @param waterDeveloper the water_developer to set
-*/
-public void setWater_developer(String waterDeveloper) {
-water_developer = waterDeveloper;
-}
+    /**
+     * @param waterDeveloper the water_developer to set
+     */
+    public void setWater_developer(String waterDeveloper) {
+        water_developer = waterDeveloper;
+    }
 
-/**
-* @return the _id
-*/
-public Long get_id() {
-return _id;
-}
+    /**
+     * @return the _id
+     */
+    public Long get_id() {
+        return _id;
+    }
 
-/**
-* @param id the _id to set
-*/
-public void set_id(Long id) {
-_id = id;
-}
+    /**
+     * @param id the _id to set
+     */
+    public void set_id(Long id) {
+        _id = id;
+    }
 
-/**
-* @return the animal_point
-*/
-public String isAnimal_point() {
-return animal_point;
-}
+    /**
+     * @return the animal_point
+     */
+    public String isAnimal_point() {
+        return animal_point;
+    }
 
-/**
-* @param animalPoint the animal_point to set
-*/
-public void setAnimal_point(String animalPoint) {
-animal_point = animalPoint;
-}    
+    /**
+     * @param animalPoint the animal_point to set
+     */
+    public void setAnimal_point(String animalPoint) {
+        animal_point = animalPoint;
+    }    
 }
