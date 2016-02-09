@@ -341,173 +341,173 @@ public class WaterPoint {
         this.start = start;
     }
 
-/**
-* @return the water_connected
-*/
-public String isWater_connected() {
-return water_connected;
-}
+    /**
+     * @return the water_connected
+     */
+    public String isWater_connected() {
+        return water_connected;
+    }
 
-/**
-* @param waterConnected the water_connected to set
-*/
-public void setWater_connected(String waterConnected) {
-water_connected = waterConnected;
-}
+    /**
+     * @param waterConnected the water_connected to set
+     */
+    public void setWater_connected(String waterConnected) {
+        water_connected = waterConnected;
+    }
 
-/**
-* @return the water_manager_name
-*/
-public String getWater_manager_name() {
-return water_manager_name;
-}
+    /**
+     * @return the water_manager_name
+     */
+    public String getWater_manager_name() {
+        return water_manager_name;
+    }
 
-/**
-* @param waterManagerName the water_manager_name to set
-*/
-public void setWater_manager_name(String waterManagerName) {
-water_manager_name = waterManagerName;
-}
+    /**
+     * @param waterManagerName the water_manager_name to set
+     */
+    public void setWater_manager_name(String waterManagerName) {
+        water_manager_name = waterManagerName;
+    }
 
-/**
-* @return the _status
-*/
-public String get_status() {
-return _status;
-}
+    /**
+     * @return the _status
+     */
+    public String get_status() {
+        return _status;
+    }
 
-/**
-* @param status the _status to set
-*/
-public void set_status(String status) {
-_status = status;
-}
+    /**
+     * @param status the _status to set
+     */
+    public void set_status(String status) {
+        _status = status;
+    }
 
-/**
-* @return the enum_id_1
-*/
-public Long getEnum_id_1() {
-return enum_id_1;
-}
+    /**
+     * @return the enum_id_1
+     */
+    public Long getEnum_id_1() {
+        return enum_id_1;
+    }
 
-/**
-* @param enumId_1 the enum_id_1 to set
-*/
-public void setEnum_id_1(Long enumId_1) {
-enum_id_1 = enumId_1;
-}
+    /**
+     * @param enumId_1 the enum_id_1 to set
+     */
+    public void setEnum_id_1(Long enumId_1) {
+        enum_id_1 = enumId_1;
+    }
 
-/**
-* @return the water_lift_mechanism
-*/
-public String isWater_lift_mechanism() {
-return water_lift_mechanism;
-}
+    /**
+     * @return the water_lift_mechanism
+     */
+    public String isWater_lift_mechanism() {
+        return water_lift_mechanism;
+    }
 
-/**
-* @param waterLiftMechanism the water_lift_mechanism to set
-*/
-public void setWater_lift_mechanism(String waterLiftMechanism) {
-water_lift_mechanism = waterLiftMechanism;
-}
+    /**
+     * @param waterLiftMechanism the water_lift_mechanism to set
+     */
+    public void setWater_lift_mechanism(String waterLiftMechanism) {
+        water_lift_mechanism = waterLiftMechanism;
+    }
 
-/**
-* @return the districts_divisions
-*/
-public String getDistricts_divisions() {
-return districts_divisions;
-}
+    /**
+     * @return the districts_divisions
+     */
+    public String getDistricts_divisions() {
+        return districts_divisions;
+    }
 
-/**
-* @param districtsDivisions the districts_divisions to set
-*/
-public void setDistricts_divisions(String districtsDivisions) {
-districts_divisions = districtsDivisions;
-}
+    /**
+     * @param districtsDivisions the districts_divisions to set
+     */
+    public void setDistricts_divisions(String districtsDivisions) {
+        districts_divisions = districtsDivisions;
+    }
 
-/**
-* @return the _uuid
-*/
-public String get_uuid() {
-return _uuid;
-}
+    /**
+     * @return the _uuid
+     */
+    public String get_uuid() {
+        return _uuid;
+    }
 
-/**
-* @param uuid the _uuid to set
-*/
-public void set_uuid(String uuid) {
-_uuid = uuid;
-}
+    /**
+     * @param uuid the _uuid to set
+     */
+    public void set_uuid(String uuid) {
+        _uuid = uuid;
+    }
 
-/**
-* @return the road_type
-*/
-public String getRoad_type() {
-return road_type;
-}
+    /**
+     * @return the road_type
+     */
+    public String getRoad_type() {
+        return road_type;
+    }
 
-/**
-* @param roadType the road_type to set
-*/
-public void setRoad_type(String roadType) {
-road_type = roadType;
-}
+    /**
+     * @param roadType the road_type to set
+     */
+    public void setRoad_type(String roadType) {
+        road_type = roadType;
+    }
 
-/**
-* @return the grid
-*/
-public String getGrid() {
-return grid;
-}
+    /**
+     * @return the grid
+     */
+    public String getGrid() {
+        return grid;
+    }
 
-/**
-* @param grid the grid to set
-*/
-public void setGrid(String grid) {
-this.grid = grid;
-}
+    /**
+     * @param grid the grid to set
+     */
+    public void setGrid(String grid) {
+        this.grid = grid;
+    }
 
-/**
-* @return the date
-*/
-public String getDate() {
-return date;
-}
+    /**
+     * @return the date
+     */
+    public String getDate() {
+        return date;
+    }
 
-/**
-* @param date the date to set
-*/
-public void setDate(String date) {
-this.date = date;
-}
+    /**
+     * @param date the date to set
+     */
+    public void setDate(String date) {
+        this.date = date;
+    }
 
-/**
-* @return the communities_villages
-*/
-public String getCommunities_villages() {
-return communities_villages;
-}
+    /**
+     * @return the communities_villages
+     */
+    public String getCommunities_villages() {
+        return communities_villages;
+    }
 
-/**
-* @param communitiesVillages the communities_villages to set
-*/
-public void setCommunities_villages(String communitiesVillages) {
-communities_villages = communitiesVillages;
-}
+    /**
+     * @param communitiesVillages the communities_villages to set
+     */
+    public void setCommunities_villages(String communitiesVillages) {
+        communities_villages = communitiesVillages;
+    }
 
-/**
-* @return the formhub_uuid
-*/
-public String getFormhub_uuid() {
-return formhub_uuid;
-}
+    /**
+     * @return the formhub_uuid
+     */
+    public String getFormhub_uuid() {
+        return formhub_uuid;
+    }
 
-/**
-* @param formhubUuid the formhub_uuid to set
-*/
-public void setFormhub_uuid(String formhubUuid) {
-formhub_uuid = formhubUuid;
-}
+    /**
+     * @param formhubUuid the formhub_uuid to set
+     */
+    public void setFormhub_uuid(String formhubUuid) {
+        formhub_uuid = formhubUuid;
+    }
 
 /**
 * @return the road_available
