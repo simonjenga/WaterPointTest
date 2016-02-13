@@ -219,7 +219,7 @@ public class WaterPoint {
     /**
      * @return the water_mechanism_plate
      */
-    public String isWater_mechanism_plate() {
+    public String getWater_mechanism_plate() {
         return water_mechanism_plate;
     }
 
@@ -233,7 +233,7 @@ public class WaterPoint {
     /**
      * @return the other_point_1km
      */
-    public String isOther_point_1km() {
+    public String getOther_point_1km() {
         return other_point_1km;
     }
 
@@ -345,7 +345,7 @@ public class WaterPoint {
     /**
      * @return the water_connected
      */
-    public String isWater_connected() {
+    public String getWater_connected() {
         return water_connected;
     }
 
@@ -401,7 +401,7 @@ public class WaterPoint {
     /**
      * @return the water_lift_mechanism
      */
-    public String isWater_lift_mechanism() {
+    public String getWater_lift_mechanism() {
         return water_lift_mechanism;
     }
 
@@ -513,7 +513,7 @@ public class WaterPoint {
     /**
      * @return the road_available
      */
-    public String isRoad_available() {
+    public String getRoad_available() {
         return road_available;
     }
 
@@ -527,7 +527,7 @@ public class WaterPoint {
     /**
      * @return the water_functioning
      */
-    public String isWater_functioning() {
+    public String getWater_functioning() {
         return water_functioning;
     }
 
@@ -681,7 +681,7 @@ public class WaterPoint {
     /**
      * @return the animal_point
      */
-    public String isAnimal_point() {
+    public String getAnimal_point() {
         return animal_point;
     }
 
