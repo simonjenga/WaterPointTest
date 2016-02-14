@@ -226,16 +226,12 @@ public class Application implements CommandLineRunner {
 
             Double functioningYes = 0D, functioningNo = 0D, totalYesAndNo = 0D;
 
-            Set<String> villageNames = new HashSet<String>();
-
             OrderedJSONObject waterPointJson = new OrderedJSONObject();
 
             DecimalFormat decimalFormat = new DecimalFormat("####0");
 
             // Process the water points
             for (int i = 0; i < wPoints.size(); i++) {
-                villageNames.add(wPoints.get(i).getCommunities_villages().toString());
-
                 String isWaterFunctioning = wPoints.get(i).getWater_functioning();
 
                 if (isWaterFunctioning.equals("yes")) {
