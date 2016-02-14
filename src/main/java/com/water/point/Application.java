@@ -92,7 +92,7 @@ public class Application implements CommandLineRunner {
     /**
      * Process the list of JSON data in form of a {@link WaterPoint} object.
      * 
-     * @param wPoints the list of {@link WaterPoint} to use
+     * @param wPoints The list of {@link WaterPoint} to use
      * @throws IOException, JSONException If there is a problem
      */
     private void processWaterPoint(List<WaterPoint> wPoints) throws IOException, JSONException {
@@ -163,67 +163,69 @@ public class Application implements CommandLineRunner {
     }
     
     /**
-     * Process the list of JSON data in form of a {@link WaterPoint} object.
+     * Process the list of JSON data in form of a {@link WaterPoint} object. The result of the processing
+     * will be the percentage of broken water points for each response to an arbitrary key.
      * 
-     * @param wPoints the list of {@link WaterPoint} to use
+     * @param wPoints The list of {@link WaterPoint} to use
+     * @param splitKey The arbitrary key to use from the {@link WaterPoint} object
      * @throws IOException, JSONException If there is a problem
      */
     private void percentWaterFunctioningByKey(List<WaterPoint> wPoints, String splitKey) throws IOException, JSONException {
         if (wPoints.isEmpty()) {
             LOG.info("No matching results found for the water point!");
         } else {
-        	Set<String> arbitraryKeys = new HashSet<String>();
-        	
-        	// Add the arbitrary keys to the hash set
+            Set<String> arbitraryKeys = new HashSet<String>();
+
+            // Add the arbitrary keys to the hash set
             for (int i = 0; i < 1; i++) {
-            	arbitraryKeys.add("water_pay");
-            	arbitraryKeys.add("respondent");
-            	arbitraryKeys.add("research_asst_name");
-            	arbitraryKeys.add("water_used_season");
-            	arbitraryKeys.add("_bamboo_dataset_id");
-            	arbitraryKeys.add("_deleted_at");
-            	arbitraryKeys.add("water_point_condition");
-            	arbitraryKeys.add("_xform_id_string");
-            	arbitraryKeys.add("other_point_1km");
-            	arbitraryKeys.add("_attachments");
-            	arbitraryKeys.add("communities_villages");
-            	arbitraryKeys.add("end");
-            	arbitraryKeys.add("animal_number");
-            	arbitraryKeys.add("water_point_id");
-            	arbitraryKeys.add("start");
-            	arbitraryKeys.add("water_connected");
-            	arbitraryKeys.add("water_manager_name");
-            	arbitraryKeys.add("_status");
-            	arbitraryKeys.add("enum_id_1");
-            	arbitraryKeys.add("water_lift_mechanism");
-            	arbitraryKeys.add("districts_divisions");
-            	arbitraryKeys.add("_uuid");
-            	arbitraryKeys.add("grid");
-            	arbitraryKeys.add("date");
-            	arbitraryKeys.add("formhub/uuid");
-            	arbitraryKeys.add("road_available");
-            	arbitraryKeys.add("water_functioning");
-            	arbitraryKeys.add("_submission_time");
-            	arbitraryKeys.add("signal");
-            	arbitraryKeys.add("water_source_type");
-            	arbitraryKeys.add("_geolocation");
-            	arbitraryKeys.add("water_point_image");
-            	arbitraryKeys.add("water_point_geocode");
-            	arbitraryKeys.add("deviceid");
-            	arbitraryKeys.add("locations_wards");
-            	arbitraryKeys.add("water_manager");
-            	arbitraryKeys.add("water_developer");
-            	arbitraryKeys.add("_id");
-            	arbitraryKeys.add("animal_point");            	
+                arbitraryKeys.add("water_pay");
+                arbitraryKeys.add("respondent");
+                arbitraryKeys.add("research_asst_name");
+                arbitraryKeys.add("water_used_season");
+                arbitraryKeys.add("_bamboo_dataset_id");
+                arbitraryKeys.add("_deleted_at");
+                arbitraryKeys.add("water_point_condition");
+                arbitraryKeys.add("_xform_id_string");
+                arbitraryKeys.add("other_point_1km");
+                arbitraryKeys.add("_attachments");
+                arbitraryKeys.add("communities_villages");
+                arbitraryKeys.add("end");
+                arbitraryKeys.add("animal_number");
+                arbitraryKeys.add("water_point_id");
+                arbitraryKeys.add("start");
+                arbitraryKeys.add("water_connected");
+                arbitraryKeys.add("water_manager_name");
+                arbitraryKeys.add("_status");
+                arbitraryKeys.add("enum_id_1");
+                arbitraryKeys.add("water_lift_mechanism");
+                arbitraryKeys.add("districts_divisions");
+                arbitraryKeys.add("_uuid");
+                arbitraryKeys.add("grid");
+                arbitraryKeys.add("date");
+                arbitraryKeys.add("formhub/uuid");
+                arbitraryKeys.add("road_available");
+                arbitraryKeys.add("water_functioning");
+                arbitraryKeys.add("_submission_time");
+                arbitraryKeys.add("signal");
+                arbitraryKeys.add("water_source_type");
+                arbitraryKeys.add("_geolocation");
+                arbitraryKeys.add("water_point_image");
+                arbitraryKeys.add("water_point_geocode");
+                arbitraryKeys.add("deviceid");
+                arbitraryKeys.add("locations_wards");
+                arbitraryKeys.add("water_manager");
+                arbitraryKeys.add("water_developer");
+                arbitraryKeys.add("_id");
+                arbitraryKeys.add("animal_point");
             }
-            
+
             if (splitKey == null || splitKey.isEmpty() || !arbitraryKeys.contains(splitKey)) {
-            	LOG.info("Please provide the correct arbitrary key!");
-            	throw new IllegalArgumentException("Please provide the correct arbitrary key!");
-			}
-            
-            Double functioningYes = 0D, functioningNo = 0D, totalYesAndNo = 0D;            
-            
+                LOG.info("Please provide the correct arbitrary key!");
+                throw new IllegalArgumentException("Please provide the correct arbitrary key!");
+            }
+
+            Double functioningYes = 0D, functioningNo = 0D, totalYesAndNo = 0D;
+
             Set<String> villageNames = new HashSet<String>();
 
             OrderedJSONObject waterPointJson = new OrderedJSONObject();
@@ -246,10 +248,10 @@ public class Application implements CommandLineRunner {
             totalYesAndNo = functioningYes + functioningNo;
             Integer percentYes = Integer.valueOf(decimalFormat.format((functioningYes / totalYesAndNo) * 100));
             Integer percentNo = Integer.valueOf(decimalFormat.format((functioningNo / totalYesAndNo) * 100));
-            
+
             waterPointJson.put("yes", percentYes.toString().concat("%"));
             waterPointJson.put("no", percentNo.toString().concat("%"));
-            
+
             LOG.info(waterPointJson.toString());
             LOG.info("matching results found and processed for the water point!");
         }
