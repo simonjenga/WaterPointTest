@@ -18,6 +18,7 @@ import java.util.Set;
 import java.util.Map.Entry;
 
 import org.apache.wink.json4j.JSONException;
+import org.apache.wink.json4j.JSONObject;
 import org.apache.wink.json4j.OrderedJSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +35,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
+import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 
 /**
  * This is the main entry class to this Project/Application.
@@ -116,7 +118,7 @@ public class Application implements CommandLineRunner {
             for (int i = 0; i < wPoints.size(); i++) {
                 villageNames.add(wPoints.get(i).getCommunities_villages().toString());
 
-                String isWaterFunctioning = wPoints.get(i).isWater_functioning();
+                String isWaterFunctioning = wPoints.get(i).getWater_functioning();
 
                 if (isWaterFunctioning.equals("yes")) {
                     waterFunctioningYes.put(wPoints.get(i).getCommunities_villages().toString(), "yes");
@@ -155,6 +157,99 @@ public class Application implements CommandLineRunner {
 
             waterPointJson.put("community_ranking:", percentageJson);
 
+            LOG.info(waterPointJson.toString());
+            LOG.info("matching results found and processed for the water point!");
+        }
+    }
+    
+    /**
+     * Process the list of JSON data in form of a {@link WaterPoint} object.
+     * 
+     * @param wPoints the list of {@link WaterPoint} to use
+     * @throws IOException, JSONException If there is a problem
+     */
+    private void percentWaterFunctioningByKey(List<WaterPoint> wPoints, String splitKey) throws IOException, JSONException {
+        if (wPoints.isEmpty()) {
+            LOG.info("No matching results found for the water point!");
+        } else {
+        	Set<String> arbitraryKeys = new HashSet<String>();
+        	
+        	// Add the arbitrary keys to the hash set
+            for (int i = 0; i < 1; i++) {
+            	arbitraryKeys.add("water_pay");
+            	arbitraryKeys.add("respondent");
+            	arbitraryKeys.add("research_asst_name");
+            	arbitraryKeys.add("water_used_season");
+            	arbitraryKeys.add("_bamboo_dataset_id");
+            	arbitraryKeys.add("_deleted_at");
+            	arbitraryKeys.add("water_point_condition");
+            	arbitraryKeys.add("_xform_id_string");
+            	arbitraryKeys.add("other_point_1km");
+            	arbitraryKeys.add("_attachments");
+            	arbitraryKeys.add("communities_villages");
+            	arbitraryKeys.add("end");
+            	arbitraryKeys.add("animal_number");
+            	arbitraryKeys.add("water_point_id");
+            	arbitraryKeys.add("start");
+            	arbitraryKeys.add("water_connected");
+            	arbitraryKeys.add("water_manager_name");
+            	arbitraryKeys.add("_status");
+            	arbitraryKeys.add("enum_id_1");
+            	arbitraryKeys.add("water_lift_mechanism");
+            	arbitraryKeys.add("districts_divisions");
+            	arbitraryKeys.add("_uuid");
+            	arbitraryKeys.add("grid");
+            	arbitraryKeys.add("date");
+            	arbitraryKeys.add("formhub/uuid");
+            	arbitraryKeys.add("road_available");
+            	arbitraryKeys.add("water_functioning");
+            	arbitraryKeys.add("_submission_time");
+            	arbitraryKeys.add("signal");
+            	arbitraryKeys.add("water_source_type");
+            	arbitraryKeys.add("_geolocation");
+            	arbitraryKeys.add("water_point_image");
+            	arbitraryKeys.add("water_point_geocode");
+            	arbitraryKeys.add("deviceid");
+            	arbitraryKeys.add("locations_wards");
+            	arbitraryKeys.add("water_manager");
+            	arbitraryKeys.add("water_developer");
+            	arbitraryKeys.add("_id");
+            	arbitraryKeys.add("animal_point");            	
+            }
+            
+            if (splitKey == null || splitKey.isEmpty() || !arbitraryKeys.contains(splitKey)) {
+            	LOG.info("Please provide the correct arbitrary key!");
+            	throw new IllegalArgumentException("Please provide the correct arbitrary key!");
+			}
+            
+            Double functioningYes = 0D, functioningNo = 0D, totalYesAndNo = 0D;            
+            
+            Set<String> villageNames = new HashSet<String>();
+
+            OrderedJSONObject waterPointJson = new OrderedJSONObject();
+
+            DecimalFormat decimalFormat = new DecimalFormat("####0");
+
+            // Process the water points
+            for (int i = 0; i < wPoints.size(); i++) {
+                villageNames.add(wPoints.get(i).getCommunities_villages().toString());
+
+                String isWaterFunctioning = wPoints.get(i).getWater_functioning();
+
+                if (isWaterFunctioning.equals("yes")) {
+                    functioningYes++;
+                } else if (isWaterFunctioning.equals("no")) {
+                    functioningNo++;
+                }
+            }
+
+            totalYesAndNo = functioningYes + functioningNo;
+            Integer percentYes = Integer.valueOf(decimalFormat.format((functioningYes / totalYesAndNo) * 100));
+            Integer percentNo = Integer.valueOf(decimalFormat.format((functioningNo / totalYesAndNo) * 100));
+            
+            waterPointJson.put("yes", percentYes.toString().concat("%"));
+            waterPointJson.put("no", percentNo.toString().concat("%"));
+            
             LOG.info(waterPointJson.toString());
             LOG.info("matching results found and processed for the water point!");
         }
