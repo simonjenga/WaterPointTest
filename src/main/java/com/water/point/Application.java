@@ -254,10 +254,11 @@ public class Application implements CommandLineRunner {
 
     /**
      * Process the list of JSON data in form of a {@link WaterPoint} object. The result of the processing
-     * will be the percentage of broken water points for each response to an arbitrary key.
+     * will be the percentage of broken water points for each response to an arbitrary key and a boolean key.
      * 
      * @param wPoints The list of {@link WaterPoint} to use
      * @param splitKey The arbitrary key to use from the {@link WaterPoint} object
+     * @param booleanKey The boolean key to use from the {@link WaterPoint} object
      * @throws IOException, JSONException If there is a problem
      */
     private void percentBooleanByKey(List<WaterPoint> wPoints, String booleanKey, String splitKey) throws IOException, JSONException {
